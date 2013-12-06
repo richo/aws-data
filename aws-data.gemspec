@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = "aws-data"
-  s.version     = "0.0.0"
+  s.version     = "0.1.0"
   s.authors     = ["Richo Healey"]
   s.email       = ["richo@psych0tik.net"]
   s.homepage    = "http://github.com/richo/aws-data"
