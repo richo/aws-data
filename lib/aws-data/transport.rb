@@ -1,15 +1,20 @@
 require 'net/http'
 
 module AWSData
+  class EndpointUnavailable < Exception
+  end
+
   class Transport
+
+    ENDPOINT_IP = "169.254.169.254"
 
     def get(path)
       uri = uri_for(path)
       res = Net::HTTP.get_response(uri)
       if res.is_a?(Net::HTTPSuccess)
-        return JSON.parse(res.body)
+        return res.body
       else
-        raise "oops"
+        raise EndpointUnavailable
       end
     end
 

@@ -1,12 +1,7 @@
 module AWSData
-  class Metadata
+  class Metadata < Base
 
-    def latest
-      transport.get("/latest/meta-data")
-    end
+    base_path "/latest/meta-data/"
 
-    def transport
-      @transport ||= Transport.new
-    end
   end
 end
